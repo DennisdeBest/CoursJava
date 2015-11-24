@@ -38,6 +38,7 @@ public class Jeu {
 			String tempLine = clavier.next();
 			continuer = tempLine.charAt(0);
 		}
+		clavier.close();
 	}
 
 }
