@@ -12,7 +12,7 @@ public class Temporaire extends Personne {
 		return tarif_horaire*nbre_heures;
 	}
 	public String toString() {
-		String output = super.toString()+"gagne "+this.salaire()+"€ ";
+		String output = getClass()+super.toString()+"gagne "+this.salaire()+"€ ("+nbre_heures+" heures à "+tarif_horaire+"€ de l'heure)";;
 		return output;
 	}
 }

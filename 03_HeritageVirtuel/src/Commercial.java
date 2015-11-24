@@ -11,7 +11,7 @@ public class Commercial extends Personne {
 		return ca*pourc_commision/100;
 	}
 	public String toString() {
-		String output = super.toString()+"gagne "+this.salaire()+"€ ";
+		String output = getClass()+super.toString()+"gagne "+this.salaire()+"€ ("+pourc_commision+"% de "+ca+"€)";
 		return output;
 	}
 }

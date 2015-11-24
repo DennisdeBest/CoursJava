@@ -1,15 +1,23 @@
+import java.util.ArrayList;
 
 public class TestClass {
 
 	public static void main(String[] args) {
-		Personne p = new Personne("unNom", "unPrenom", false);
-		System.out.println(p);
-		Permanent per = new Permanent("nomPer", "prenomPer", true, 1250);
-		System.out.println(per);
+		Permanent p = new Permanent("nomPer", "prenomPer", true, 1250);
 		Commercial c = new Commercial("nomCom", "prenomCom", false, 10000, 20);
-		System.out.println(c);
 		Temporaire t = new Temporaire("nomTemp","prenomTemp", true, 18, 24);
-		System.out.println(t);
+
+		ArrayList<Personne> salaries = new ArrayList<>();
+		salaries.add(p);
+		salaries.add(c);
+		salaries.add(t);
+		
+		int totsalaire = 0;
+		for(Personne salarie:salaries){
+			System.out.println(salarie);
+			totsalaire += salarie.salaire();
+		}
+		System.out.println("Total a payer : "+totsalaire+"€");
 	}
 
 }

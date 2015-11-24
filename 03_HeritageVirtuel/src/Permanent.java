@@ -10,7 +10,7 @@ public class Permanent extends Personne {
 		return fixe;
 	}
 	public String toString(){
-		String output = super.toString() + "gagne "+fixe+" € par mois ";
+		String output = getClass()+super.toString() + "gagne "+fixe+" € par mois ";
 		return output;
 	}
 }
