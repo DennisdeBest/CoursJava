@@ -7,6 +7,7 @@ public class MaFrame extends JFrame{
 		this.setSize(400,400);
 		this.setTitle("My Frame !!!");
 		MonPanel panel = new MonPanel();
+		this.add(panel);
 	}
 
 }
