@@ -2,12 +2,28 @@
 import java.util.Random;
 
 public class Moteur {
-private boolean win;
-private int nbr_a_trouver;
-private int nbr_coups;
-private int nbr_coups_max;
-	public Moteur(){
-		this(7);
+	private boolean win;
+	private int nbr_a_trouver;
+	private int nbr_coups;
+	private int nbr_coups_max;
+	private Difficulty difficulty;
+	public Moteur(Difficulty difficulty){
+		switch(difficulty){
+		case EASY:
+			nbr_coups_max = 10;
+		case MEDIUM:
+			nbr_coups_max = 7;
+		case HARD:
+			nbr_coups_max = 5;
+		}
+		this.difficulty = difficulty;
+	}
+	
+	public String getRegles()
+	{
+		return "Vous devez trouver un nombre entre 1 et 100."+
+				"Vous avez choisi le niveau "+difficulty+
+				"Vous avez "+nbr_coups_max+" coups";
 	}
 	
 	public Moteur(int coups_max){
