@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
@@ -167,7 +168,7 @@ public class AddPanel extends JPanel implements ActionListener {
 		else if(e.getSource()==jbAdd)
 		{
 			if(temp.isSelected()){
-				if (male.isSelected())
+				if (male.isSelected())	
 					arrP.add(new Temporaire(fName.getText(), lName.getText(), false, Integer.parseInt(hours.getText()), Integer.parseInt(wages.getText())));
 				else
 					arrP.add(new Temporaire(fName.getText(), lName.getText(), true, Integer.parseInt(hours.getText()), Integer.parseInt(wages.getText())));
@@ -187,5 +188,22 @@ public class AddPanel extends JPanel implements ActionListener {
 					arrP.add(new Permanent(fName.getText(), lName.getText(), true, Integer.parseInt(wages.getText())));
 			}
 		}
+	}
+	public void printToFile (String s){
+		String filename = "employees.txt";
+		 try {
+		FileWriter fileWriter = new FileWriter(filename);
+		BufferedWriter bufferedWriter =
+                new BufferedWriter(fileWriter);
+		bufferedWriter.write(s);
+		bufferedWriter.close();
+		 }  
+    catch(IOException ex) {
+        System.out.println(
+            "Error writing to file '"
+            + filename + "'");
+        // Or we could just do this:
+        // ex.printStackTrace();
+    	}
 	}
 }
